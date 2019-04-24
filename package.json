@@ -1,0 +1,19 @@
+{
+  "name": "nodecp",
+  "version": "0.0.2",
+  "description": "",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "npm install express express-session body-parser sync-mysql"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-session": "^1.16.1",
+    "sync-mysql": "^3.0.1",
+    "walk": "^2.3.14"
+  }
+}

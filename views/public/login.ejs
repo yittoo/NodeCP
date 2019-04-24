@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+				<div class="row">
+					<div class="Absolute-Center is-Responsive">
+						<div id="logo-container"></div>
+						<div class="col-sm-12 col-md-10 col-md-offset-1">
+							<form action="auth" id="loginForm" method="post">
+								<div class="form-group input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+									<% if (request.session.loggedin) { %>
+										<input class="form-control" type="text" name='username' placeholder="username - Already Logged In" disabled>     
+									<% } else { %>
+										<input class="form-control" type="text" name='username' placeholder="username" required>     
+									<% } %>
+								</div>
+								<div class="form-group input-group">
+									<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+									<% if (request.session.loggedin) { %>
+										<input class="form-control" type="password" name='password' placeholder="password - Already Logged In" disabled>     
+									<% } else { %>
+										<input class="form-control" type="password" name='password' placeholder="password" required> 
+									<% } %>
+								</div>
+								<div class="form-group">
+									<button type="submit" class="btn btn-def btn-block">Login</button>
+								</div>
+								<div class="form-group text-center">
+									<a href="#">Forgot Password</a>&nbsp;|&nbsp;<a href="#">Support</a>
+								</div>
+							</form>        
+						</div>  
+					</div>    
+				</div>
+			</div>
+	</body>
+</html>
