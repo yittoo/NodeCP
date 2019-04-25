@@ -1,0 +1,42 @@
+<div class="box">
+  <% if (type.toLowerCase() === 'home') { %>
+    <p class="maintitle">Welcome to <%= title %></p>
+  <% } else if (type.toLowerCase() === 'login') { %>
+    <form action="auth" method="post">
+      <h1 class="title">Login to <%= title %></h1>
+      <div class="form-group">
+        <input type="text" class="form-control" name="username" placeholder="Username" required>
+      </div>
+
+      <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="Password" required>
+      </div>
+
+      <button type="login">Login</button>
+    </form>
+  <% } else if (type.toLowerCase() === 'register') { %>
+    <form action="signup" method="post" id="reg-form">
+      <h1 class="title">Register to <%= title %></h1>
+      <div class="form-group">
+        <input type="text" class="form-control" name="username" placeholder="Username" required>
+      </div>
+  
+      <div class="form-group">
+        <input type="password" class="form-control" name="password" placeholder="Password" required>
+      </div>
+
+      <div class="form-group">
+        <input type="email" class="form-control" name="email" placeholder="Email" required>
+      </div>
+
+      <div class="form-group">
+        <select class="gender" form="reg-form" name="gender">
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+  
+      <button type="register">Register</button>
+    </form>
+  <% } %>
+</div>

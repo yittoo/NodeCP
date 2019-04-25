@@ -1,23 +1,11 @@
-<nav class="navbar navbar-default navbar-sticky-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span></a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li><a href="/status">Status</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <% if (!request.session.loggedin) { %>
-        <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      <% } else { %>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span> <%= request.session.username %> <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">View Account</a></li>
-            </ul>
-        </li>
-      <% } %>
-    </ul>
-  </div>
-</nav>
+<ul>
+  <% if (request.session.loggedin) { %>
+    <% for (var nav of navbars.filter(n => n.name.toLowerCase() !== 'login' && n.name.toLowerCase() !== 'register')) { %>
+      <li><a href=<%= nav.href %>><%= nav.name %></a></p>
+    <% } %>
+  <% } else { %>
+    <% for (var nav of navbars.filter(n => n.name.toLowerCase() !== 'my account' && n.name.toLowerCase() !== 'log out')) { %>
+      <li><a href=<%= nav.href %>><%= nav.name %></a></p>
+    <% } %>
+  <% } %>
+</ul>

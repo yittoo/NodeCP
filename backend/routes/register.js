@@ -10,7 +10,9 @@ module.exports = {
     }
 
     response.render('public/register', {
-      request
+      title: web.title,
+      request,
+      navbars: web.navbarsDisplay
     });
   }
 };

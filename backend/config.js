@@ -19,6 +19,22 @@ module.exports = {
       {
         name: "Status",
         href: "/status"
+      },
+      {
+        name: "Login",
+        href: "/login"
+      },
+      {
+        name: "Register",
+        href: "/register"
+      },
+      {
+        name: "My Account",
+        href: "/#"
+      },
+      {
+        name: 'Log Out',
+        href: '/logout'
       }
     ] 
   },

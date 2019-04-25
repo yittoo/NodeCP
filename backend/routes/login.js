@@ -10,7 +10,9 @@ module.exports = {
     }
 
     response.render('public/login', {
-      request
+      title: web.title,
+      request,
+      navbars: web.navbarsDisplay
     });
   }
 };

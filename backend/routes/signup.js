@@ -24,7 +24,8 @@ module.exports = {
 
     request.session.loggedin = true;
     request.session.username = request.body.username;
-    Register.run('login', request.body.username, request.body.password, 'M', request.body.email);
+    
+    Register.run('login', request.body.username, request.body.password, request.body.gender, request.body.email);
     response.redirect('/')
     response.end();
   }

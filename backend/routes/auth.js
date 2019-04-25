@@ -15,8 +15,6 @@ module.exports = {
       return response.send('Already logged in');
     }
 
-    console.log(connection.get('login', 'userid', request.body.username));
-
     let login = Login.run('login', request.body.username, request.body.password);
 
     if (login.toLowerCase().includes('successfully logged')) {
